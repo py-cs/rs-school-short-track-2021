@@ -20,6 +20,7 @@ class Queue {
   constructor() {
     this.first = null;
     this.last = null;
+    this.q = [];
   }
 
   get size() {
@@ -35,12 +36,14 @@ class Queue {
       this.first = node;
       this.last = node;
     }
+    this.q.push(element);
   }
 
   dequeue() {
-    const node = this.first;
+    // const node = this.first;
     this.first = this.first.next;
-    return node.value;
+    // return node.value;
+    return this.q.shift();
   }
 }
 
